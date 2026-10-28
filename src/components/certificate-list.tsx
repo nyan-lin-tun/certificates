@@ -1,7 +1,6 @@
 import { type Certificate, formatDate } from '../lib/content';
 import { assetPath } from '../lib/site';
 import { Markdown } from './markdown';
-import { CertificateIcon } from './certificate-icon';
 
 export function CertificateList({ certificates }: { certificates: Certificate[] }) {
   return (
@@ -19,7 +18,6 @@ export function CertificateList({ certificates }: { certificates: Certificate[] 
               id={certificate.id}
               className="entry-title flex flex-wrap items-baseline gap-x-2 text-lg leading-relaxed sm:text-xl"
             >
-              <CertificateIcon category={certificate.category} />
               <a
                 className="project-link"
                 href={certificate.file ? assetPath(certificate.file) : certificate.verificationUrl}
@@ -28,9 +26,6 @@ export function CertificateList({ certificates }: { certificates: Certificate[] 
                 aria-label={`View ${certificate.mark} ${certificate.file ? 'certificate' : 'badge'} (opens in a new tab)`}
               >
                 {certificate.title}
-                <span className="link-arrow" aria-hidden="true">
-                  ↗
-                </span>
               </a>
               <span className="text-muted">— {certificate.issuer}</span>
             </h2>
@@ -52,9 +47,6 @@ export function CertificateList({ certificates }: { certificates: Certificate[] 
                 aria-label={`Verify ${certificate.mark} credential (opens in a new tab)`}
               >
                 Verify credential
-                <span className="link-arrow" aria-hidden="true">
-                  ↗
-                </span>
               </a>
             )}
           </article>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getSite } from '../lib/content';
 import { ThemeProvider } from '../components/theme-provider';
 import { ThemeToggle } from '../components/theme-toggle';
+import { Analytics } from '../components/analytics';
 import './globals.css';
 
 const site = getSite();
@@ -38,9 +39,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <span className="ml-1 text-accent">.</span>
               </a>
               <nav aria-label="Main navigation" className="flex items-center gap-6 sm:gap-8">
-                <Link className="nav-link" href="/">
+                <Link className="nav-link" href="/" aria-current="page">
                   Certificates
                 </Link>
+                <a className="nav-link" href="https://nyanlintun.me/works/">
+                  Works
+                </a>
                 <ThemeToggle />
               </nav>
             </header>
@@ -54,12 +58,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
                 <span>{site.footer}</span>
                 <a href="https://github.com/nyan-lin-tun" className="hover:text-foreground">
-                  GitHub <span aria-hidden="true">↗</span>
+                  GitHub
                 </a>
               </div>
             </footer>
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

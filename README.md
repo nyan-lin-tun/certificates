@@ -1,6 +1,6 @@
 # Certificates
 
-My certificates and course completions, newest first. Built with Next.js, TypeScript, and Tailwind CSS, using the same layout as [works](https://github.com/nyan-lin-tun/works).
+My certificates and course completions, newest first. Built with Next.js, TypeScript, and Tailwind CSS, using the same layout as [works](https://github.com/nyan-lin-tun/works). Production builds use the same Google Analytics property (`G-JXLXCN5680`); development mode does not load analytics.
 
 ## Run locally
 
@@ -45,7 +45,7 @@ Completed the Certified Kubernetes Administrator program.
 - Add `verificationUrl` for a direct credential or badge page, not a lookup form. A badge without a document needs only this URL; omit `file`.
 - Set `draft: true` to hide an entry. Documents in `public/` are still published.
 
-Edit `content/README.md` for the introduction and footer. Icons follow each entry’s category; the mapping is in `src/components/certificate-icon.tsx`.
+Edit `content/README.md` for the introduction and footer.
 
 ## Check and preview
 
